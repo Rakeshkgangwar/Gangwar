@@ -1,0 +1,54 @@
+Name:         mypod
+Namespace:    default
+Node:         ilcepoc264/10.245.100.113
+Start Time:   Wed, 04 Jul 2018 14:30:59 +0300
+Labels:       version=1.0
+Annotations:  <none>
+Status:       Running
+IP:           10.244.0.27
+Containers:
+  nginx1:
+    Container ID:   docker://2cb17d8c2574436e0dad7c1cb0ee4c6d2d1dca67c81bb11e4ac0f5980c0a4813
+    Image:          tomcat
+    Image ID:       docker-pullable://docker.io/ubuntu@sha256:5f4bdc3467537cbbe563e80db2c3ec95d548a9145d64453b06939c4592d67b6d
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Wed, 04 Jul 2018 14:41:41 +0300
+      Finished:     Wed, 04 Jul 2018 14:41:41 +0300
+    Ready:          False
+    Restart Count:  6
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-jbsqg (ro)
+Conditions:
+  Type           Status
+  Initialized    True 
+  Ready          False 
+  PodScheduled   True 
+Volumes:
+  default-token-jbsqg:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-jbsqg
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason                 Age               From                 Message
+  ----     ------                 ----              ----                 -------
+  Normal   Scheduled              13m               default-scheduler    Successfully assigned mypod to ilcepoc264
+  Normal   SuccessfulMountVolume  13m               kubelet, ilcepoc264  MountVolume.SetUp succeeded for volume "default-token-jbsqg"
+  Normal   Pulling                12m               kubelet, ilcepoc264  pulling image "nginx"
+  Normal   Pulled                 12m               kubelet, ilcepoc264  Successfully pulled image "nginx"
+  Normal   Killing                6m                kubelet, ilcepoc264  Killing container with id docker://nginx1:Container spec hash changed (4000195989 vs 1924782360).. Container will be killed and recreated.
+  Normal   Pulling                5m (x4 over 6m)   kubelet, ilcepoc264  pulling image "ubuntu"
+  Normal   Created                4m (x5 over 12m)  kubelet, ilcepoc264  Created container
+  Normal   Started                4m (x5 over 12m)  kubelet, ilcepoc264  Started container
+  Normal   Pulled                 4m (x4 over 6m)   kubelet, ilcepoc264  Successfully pulled image "ubuntu"
+  Warning  BackOff                3m (x13 over 5m)  kubelet, ilcepoc264  Back-off restarting failed container
